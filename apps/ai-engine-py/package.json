@@ -1,6 +1,7 @@
 {
+  "name": "ai-engine-py",
+  "version": "1.0.0",
   "scripts": {
-    "dev": "source venv/bin/activate && uvicorn main:app --reload --port 8002",
-    "build": "echo 'Python build skipped'"
+    "dev": "python3 src/main.py"
   }
 }
