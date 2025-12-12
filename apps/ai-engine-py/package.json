@@ -1,0 +1,6 @@
+{
+  "scripts": {
+    "dev": "source venv/bin/activate && uvicorn main:app --reload --port 8002",
+    "build": "echo 'Python build skipped'"
+  }
+}

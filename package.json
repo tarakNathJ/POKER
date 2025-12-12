@@ -1,5 +1,5 @@
 {
-  "name": "Pocker ",
+  "name": "pocker",
   "private": true,
   "scripts": {
     "build": "turbo run build",
