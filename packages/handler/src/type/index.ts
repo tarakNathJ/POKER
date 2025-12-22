@@ -4,7 +4,7 @@ export type type_of_asyncFunction = (
   req: Request,
   res: Response,
   next: NextFunction
-) => Promise<type_for_responce >;
+) => Promise<type_for_responce>;
 
 export type type_for_responce = {
   statuscode: number;
