@@ -1,10 +1,16 @@
 {
-  "name": "database",
+  "name": "@poker/database",
+  "exports": {
+    ".": "./dist/index.js"
+  },
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": ""
+    "dev": "npx tsc && node dist/index.js",
+    "generate": "prisma generate",
+    "migrate": "prisma migrate dev",
+    "studio": "prisma studio"
   },
   "keywords": [],
   "author": "",
