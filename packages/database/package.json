@@ -7,7 +7,7 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "dev": "npx tsc && node dist/index.js",
+    "build": "npx tsc",
     "generate": "prisma generate",
     "migrate": "prisma migrate dev",
     "studio": "prisma studio"
