@@ -18,7 +18,8 @@ model user {
   total_winnings total_winning[]
   chips          chip[]
   total_Tables   table[]
-  @@index([email ,id])
+
+  @@index([email, id])
 }
 
 model balance {
@@ -28,6 +29,7 @@ model balance {
   user_ids user     @relation(references: [id], fields: [user_id])
   createAt DateTime
   updateAt DateTime @default(now())
+
   @@index([user_id])
 }
 
@@ -38,6 +40,7 @@ model total_winning {
   user_ids user     @relation(references: [id], fields: [user_id])
   createAt DateTime
   updateAt DateTime @default(now())
+
   @@index([user_id])
 }
 
@@ -48,17 +51,18 @@ model chip {
   user_ids user     @relation(references: [id], fields: [user_id])
   createAt DateTime
   updateAt DateTime @default(now())
+
   @@index([user_id])
 }
 
 model table {
-  id       Int      @id @default(autoincrement())
-  winning_count    Int
-  lose_count Int
-  user_id  Int 
-  user_ids user     @relation(references: [id], fields: [user_id])
-  createAt DateTime
-  updateAt DateTime @default(now())
+  id            Int      @id @default(autoincrement())
+  winning_count Int
+  lose_count    Int
+  user_id       Int
+  user_ids      user     @relation(references: [id], fields: [user_id])
+  createAt      DateTime
+  updateAt      DateTime @default(now())
 
   @@index([user_id])
 }
