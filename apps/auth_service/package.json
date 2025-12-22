@@ -10,11 +10,18 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "dependencies": {
+    "@handler/pocker": "^1.0.0",
+    "@matrix/poker": "^1.0.0",
+    "@poker/database": "^1.0.0",
+    "bcrypt": "^6.0.0",
+    "jsonwebtoken": "^9.0.3",
     "typescript": "^5.9.2"
   },
   "devDependencies": {
+    "@types/bcrypt": "^6.0.0",
+    "@types/jsonwebtoken": "^9.0.10",
     "nodemon": "^3.1.11"
   }
 }
