@@ -1,5 +1,8 @@
 import type { Request, Response, NextFunction } from "express";
-import type { type_of_asyncFunction } from "../type/index.js";
+import type {
+  type_of_asyncFunction,
+  
+} from "../type/index.js";
 
 export const asyncFunction =
   (func: type_of_asyncFunction) =>

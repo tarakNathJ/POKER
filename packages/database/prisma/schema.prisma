@@ -11,6 +11,7 @@ model user {
   id             Int             @id @default(autoincrement())
   name           String
   email          String          @unique
+  password       String
   isActive       Boolean         @default(false)
   createAt       DateTime
   updateAt       DateTime        @default(now())
@@ -24,7 +25,7 @@ model user {
 model balance {
   id       Int      @id @default(autoincrement())
   amount   Int
-  user_id  Int
+  user_id  Int     @unique
   user_ids user     @relation(references: [id], fields: [user_id])
   createAt DateTime
   updateAt DateTime @default(now())
@@ -34,7 +35,7 @@ model balance {
 model total_winning {
   id       Int      @id @default(autoincrement())
   count    Int
-  user_id  Int
+  user_id  Int      @unique
   user_ids user     @relation(references: [id], fields: [user_id])
   createAt DateTime
   updateAt DateTime @default(now())
@@ -44,7 +45,7 @@ model total_winning {
 model chip {
   id       Int      @id @default(autoincrement())
   count    Int
-  user_id  Int
+  user_id  Int      @unique
   user_ids user     @relation(references: [id], fields: [user_id])
   createAt DateTime
   updateAt DateTime @default(now())
@@ -60,5 +61,5 @@ model table {
   createAt DateTime
   updateAt DateTime @default(now())
 
-  @@index([user_id])
+ 
 }
