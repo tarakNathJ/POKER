@@ -325,3 +325,61 @@ export const addChips = asyncFunction(
       );
   })
 );
+
+export const convert_chips_to_balance = asyncFunction(async (req, res) => {
+  const { chips } = req.body;
+  // @ts-ignore
+  const userId: number = req.user.id;
+
+  // chack chips exist or not
+  //then if user chips table chips exist then decrement ther chips and then update balance
+  //then return responce
+  if (!chips) {
+    throw new api_error(400, "all field are required");
+  }
+
+  const decrease_chips_and_update_balance = await prisma.$transaction(
+    async (tx) => {
+      await tx.chip.update({
+        where: {
+          user_id: userId,
+          count: { gte: chips },
+        },
+        data: {
+          count: {
+            decrement: chips,
+          },
+        },
+      });
+
+      const update_user_balance = await tx.balance.update({
+        where: {
+          user_id: userId,
+        },
+        data: {
+          amount: { increment: chips },
+        },
+        select: {
+          amount: true,
+          updateAt: true,
+        },
+      });
+
+      return update_user_balance;
+    }
+  );
+
+  if (!decrease_chips_and_update_balance) {
+    throw new api_error(400, " db update error");
+  }
+
+  return res
+    .status(201)
+    .json(
+      new api_responce(
+        201,
+        decrease_chips_and_update_balance,
+        "success fully  convert chips"
+      )
+    );
+});
