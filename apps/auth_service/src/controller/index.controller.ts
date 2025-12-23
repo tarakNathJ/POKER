@@ -72,17 +72,20 @@ export const sign_up_controller = asyncFunction(async (req, res) => {
     throw new api_error(400, "  failed to create  access token  ");
   }
 
-  return res.status(201).json(
-    new api_responce(
-      201,
-      {
-        access_token,
-        email: add_new_entry_in_our_db.email,
-        id: add_new_entry_in_our_db.id,
-      },
-      " sign up success fully "
-    )
-  );
+  return res
+    .cookie("accessToken", access_token)
+    .status(201)
+    .json(
+      new api_responce(
+        201,
+        {
+          access_token,
+          email: add_new_entry_in_our_db.email,
+          id: add_new_entry_in_our_db.id,
+        },
+        " sign up success fully "
+      )
+    );
 });
 
 // login controller
@@ -134,17 +137,20 @@ export const login_controller = asyncFunction(async (req, res) => {
     throw new api_error(400, "  failed to create  access token  ");
   }
 
-  return res.status(200).json(
-    new api_responce(
-      200,
-      {
-        access_token,
-        email: chack_email_in_out_db.email,
-        id: chack_email_in_out_db.id,
-      },
-      " login success fully"
-    )
-  );
+  return res
+    .cookie("accessToken", access_token)
+    .status(200)
+    .json(
+      new api_responce(
+        200,
+        {
+          access_token,
+          email: chack_email_in_out_db.email,
+          id: chack_email_in_out_db.id,
+        },
+        " login success fully"
+      )
+    );
 });
 
 // forgot password

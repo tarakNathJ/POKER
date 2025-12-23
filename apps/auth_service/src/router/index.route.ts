@@ -25,3 +25,6 @@ routes.route("/convert-chips-to-money").post(verify_JWT,convert_chips_to_balance
 routes.route("/get-user-balance").get(verify_JWT,get_user_balance);
 routes.route("/get-user-chips").get(verify_JWT,get_user_chips);
 routes.route("/get-user-profile").get(verify_JWT,get_user_profile)
+
+
+export default routes
