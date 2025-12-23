@@ -314,6 +314,9 @@ export const addChips = asyncFunction(
       }
     );
 
+    if (!chack_balance_exist_then_buy_chips) {
+      throw new api_error(401, "db Operation failed");
+    }
     return res
       .status(201)
       .json(
@@ -381,5 +384,84 @@ export const convert_chips_to_balance = asyncFunction(async (req, res) => {
         decrease_chips_and_update_balance,
         "success fully  convert chips"
       )
+    );
+});
+export const get_user_balance = asyncFunction(async (req, res) => {
+  //@ts-ignore
+  const userId: number = req.user.id;
+
+  const get_user_balance = await prisma.balance.findFirst({
+    where: {
+      user_id: userId,
+    },
+    select: {
+      amount: true,
+    },
+  });
+
+  if (!get_user_balance) {
+    throw new api_error(401, "db Operation failed");
+  }
+  return res
+    .status(200)
+    .json(
+      new api_responce(200, get_user_balance, " success fully get balance ")
+    );
+});
+
+export const get_user_chips = asyncFunction(async (req, res) => {
+  //@ts-ignore
+  const userId: number = req.user.id;
+
+  const get_user_balance = await prisma.chip.findFirst({
+    where: {
+      user_id: userId,
+    },
+    select: {
+      count: true,
+    },
+  });
+
+  if (!get_user_balance) {
+    throw new api_error(401, "db Operation failed");
+  }
+  return res
+    .status(200)
+    .json(
+      new api_responce(200, get_user_balance, " success fully get all chips ")
+    );
+});
+
+export const get_user_profile = asyncFunction(async (req, res) => {
+  // @ts-ignore
+  const userId: number = req.user.id;
+
+  const user_profile = await prisma.user.findUnique({
+    where: {
+      id: userId,
+    },
+    select: {
+      email: true,
+      updateAt: true,
+      balances: {
+        select: {
+          amount: true,
+        },
+      },
+      chips: {
+        select: {
+          count: true,
+        },
+      },
+    },
+  });
+
+  if (!user_profile) {
+    throw new api_error(401, "db Operation failed");
+  }
+  return res
+    .status(200)
+    .json(
+      new api_responce(200, user_profile, "success fully get user profile")
     );
 });

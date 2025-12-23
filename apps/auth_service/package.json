@@ -16,6 +16,7 @@
     "@matrix/poker": "^1.0.0",
     "@poker/database": "^1.0.0",
     "bcrypt": "^6.0.0",
+    "express": "^5.2.1",
     "jsonwebtoken": "^9.0.3",
     "typescript": "^5.9.2"
   },
