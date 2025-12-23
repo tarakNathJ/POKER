@@ -453,6 +453,18 @@ export const get_user_profile = asyncFunction(async (req, res) => {
           count: true,
         },
       },
+
+      total_winnings: {
+        select: {
+          count: true,
+        },
+      },
+
+      _count: {
+        select: {
+          total_Tables: true,
+        },
+      },
     },
   });
 

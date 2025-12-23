@@ -6,6 +6,9 @@ import {
   addBalance,
   addChips,
   convert_chips_to_balance,
+  get_user_balance,
+  get_user_chips,
+  get_user_profile
 } from "../controller/index.controller.js";
 
 import {verify_JWT} from "../middleware/index.middleware.js"
@@ -18,4 +21,7 @@ routes.route("/log-in").post(login_controller);
 routes.route("/change-password").put(verify_JWT , change_user_password);
 routes.route("/add-balance").post(verify_JWT, addBalance);
 routes.route("/add-chips").post(verify_JWT, addChips);
-routes.route("/convert-chips-to-money").post(verify_JWT,convert_chips_to_balance)
+routes.route("/convert-chips-to-money").post(verify_JWT,convert_chips_to_balance);
+routes.route("/get-user-balance").get(verify_JWT,get_user_balance);
+routes.route("/get-user-chips").get(verify_JWT,get_user_chips);
+routes.route("/get-user-profile").get(verify_JWT,get_user_profile)
