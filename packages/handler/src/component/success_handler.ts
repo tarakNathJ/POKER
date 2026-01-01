@@ -1,4 +1,4 @@
-import type{type_for_responce} from "../type/index.js"
+import type{type_for_responce} from "@poker/types"
 class api_responce {
   statuscode: type_for_responce["statuscode"];
   data: type_for_responce["data"];

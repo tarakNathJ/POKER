@@ -17,6 +17,8 @@
     "@types/express": "^5.0.6"
   },
   "dependencies": {
+    "@poker/types": "^1.0.0",
+    "@types/poker": "^1.0.0",
     "express": "^5.2.1"
   }
 }
