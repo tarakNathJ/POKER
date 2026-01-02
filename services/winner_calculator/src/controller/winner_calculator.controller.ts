@@ -2,20 +2,7 @@ import PokerEvaluator from "poker-evaluator";
 import type { poker_table_data_for_Cash_Game } from "@poker/types";
 import type { Tplayer_details } from "../types/index.js";
 
-// const datam = {
-//   tablename: "table name",
-//   communityCards: ["ye", "iu", "ru", "ei", "jo"],
-//   players: {
-//     player1: ["yi", "oi"],
-//     player2: ["yi", "oi"],
-//     player3: ["yi", "oi"],
-//     player4: ["yi", "oi"],
-//   },
-//   total_chips: 1234,
-//   game_type: "Cash Game",
-// };
-
-class price_calculator {
+class winner_calculator {
   // calculate player hand
   private calculate_player_hand(
     player_list: Tplayer_details[],
@@ -98,14 +85,16 @@ class price_calculator {
     player_list[2]?.rank = 3;
 
     return {
-      table_name:data.tablename,
-      game_type:data.game_type,
-      winners:{
-        first : player_list[0],
-        second:player_list[1],
-        third:player_list[2]
+      table_name: data.tablename,
+      game_type: data.game_type,
+      winners: {
+        first: player_list[0],
+        second: player_list[1],
+        third: player_list[2],
       },
-      chips:data.total_chips 
-    }
+      chips: data.total_chips,
+    };
   }
 }
+
+export { winner_calculator };

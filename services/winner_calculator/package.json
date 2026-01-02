@@ -17,5 +17,8 @@
     "poker-evaluator": "^2.1.1",
     "pokersolver": "^2.1.4",
     "typescript": "^5.9.2"
+  },
+  "devDependencies": {
+    "kafkajs": "^2.2.4"
   }
 }

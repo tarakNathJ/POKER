@@ -26,22 +26,5 @@
 //   game_type: "Cash Game",
 // };
 
-// /////////////////////// Split pot rule /////////////////////////
-
-// const datas = {
-//   tablename: "table name",
-//   communityCards: ["ye", "iu", "ru", "ei", "jo"],
-//   players: {
-//     player1: {
-//       card: ["yi", "oi"],
-//       chips: 21455,
-//     },
-//     player2: { card: ["yi", "oi"], chips: 21455 },
-//     player3: { card: ["yi", "oi"], chips: 21455 },
-//     player4: { card: ["yi", "oi"], chips: 21455 },
-//   },
-//   total_chips: 1234,
-// };
-
 
 
