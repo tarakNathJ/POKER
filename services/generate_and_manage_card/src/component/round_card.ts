@@ -4,8 +4,8 @@ export const card_selection_round = (cards: string[]) => {
   }
   const all_cards = cards;
   const flop_round = all_cards.splice(0, 3);
-  const trun_round = all_cards.splice(2, 3);
-  const river_round = all_cards.splice(1, 2);
+  const trun_round = all_cards.splice(0, 1);
+  const river_round = all_cards.splice(0, 1);
 
   return { Card: all_cards, flop_round, trun_round, river_round };
 };

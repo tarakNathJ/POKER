@@ -24,11 +24,11 @@ class cards_suffle_algo {
 
         break;
       case 2:
-        result = this.merge_shuffle();
+        result = await this.merge_shuffle();
 
         break;
       case 3:
-        result = this.HEK_shuffle();
+        result = await this.HEK_shuffle();
 
         break;
       default:
@@ -52,12 +52,12 @@ class cards_suffle_algo {
       const j = Math.floor(Math.random() * i);
       [Deck[i], Deck[j]] = [Deck[j], Deck[i]];
     }
-    return Deck;
+    return { cards: Deck, algo_name: "Sattolo's Algorithm" };
   }
 
-  /////////////////////////////////
+  //****************************************************
 
-  private merge_shuffle() {
+  private async merge_shuffle() {
     const arr = this.deepCopy();
 
     const mid = Math.floor(arr.length / 2);
@@ -72,17 +72,18 @@ class cards_suffle_algo {
         shuffled.push(right.shift());
       }
     }
-    return shuffled;
+    return { cards: shuffled, algo_name: "MergeShuffle" };
   }
-  ////////////////////
+  //******************************************************** */
 
-  private HEK_shuffle() {
+  private async HEK_shuffle() {
     const arr = this.deepCopy();
-
-    return arr
+    const shuffled = arr
       .map((card: any) => ({ card, key: crypto.randomUUID() }))
       .sort((a: any, b: any) => a.key.localeCompare(b.key))
       .map((obj: any) => obj.card);
+
+    return { cards: shuffled, algo_name: "HEK Shuffle" };
   }
 }
 
