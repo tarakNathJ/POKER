@@ -1,0 +1,16 @@
+{
+  "name": "@kafka_init/pocker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "kafkajs": "^2.2.4"
+  }
+}
