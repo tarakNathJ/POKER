@@ -3,7 +3,7 @@
   "exports": {
     ".": "./dist/index.js"
   },
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
@@ -17,6 +17,7 @@
     "@types/express": "^5.0.6"
   },
   "dependencies": {
+    "@grpc/grpc-js": "^1.14.3",
     "@poker/types": "^1.0.0",
     "@types/poker": "^1.0.0",
     "express": "^5.2.1"

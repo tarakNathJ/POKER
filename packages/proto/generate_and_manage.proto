@@ -3,7 +3,7 @@ syntax = "proto3";
 package cards;
 
 service UserCardDetails {
-  rpc CreateUser (CreateUserRequest) returns (CardDetails);
+  rpc ManageCard (CreateUserRequest) returns (CardDetails);
 }
 
 /* -------- Requests -------- */

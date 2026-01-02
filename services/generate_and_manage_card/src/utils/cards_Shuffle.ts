@@ -1,4 +1,4 @@
-import { template } from "../utils/cards_template.js";
+import { template } from "./cards_template.js";
 
 class cards_suffle_algo {
   private cards_template: string[] = [];
