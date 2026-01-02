@@ -31,4 +31,4 @@ class kafka_instance {
   }
 }
 
-export default kafka_instance;
+export { kafka_instance };

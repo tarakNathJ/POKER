@@ -14,3 +14,21 @@ export type type_for_responce = {
   error?: Error | [];
   stack?: string | null;
 };
+
+
+type Card = string;
+
+type PlayerCards = Card[];
+ 
+export  type poker_table_data_for_Cash_Game  = {
+  tablename: string;
+  communityCards: Card[];          // exactly 5 cards in real game
+  players: {
+    player1: PlayerCards;
+    player2: PlayerCards;
+    player3: PlayerCards;
+    player4: PlayerCards;
+  };
+  total_chips: number;
+  game_type: "Cash Game" | "Tournament";
+};
