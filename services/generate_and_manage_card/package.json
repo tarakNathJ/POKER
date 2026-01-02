@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon --exec \"npm run start\" --ext ts --watch src",
+    "start": "tsc && node dist/index.js"
   },
   "keywords": [],
   "author": "",
@@ -12,6 +13,7 @@
   "type": "module",
   "dependencies": {
     "@grpc/grpc-js": "^1.14.3",
-    "@grpc/proto-loader": "^0.8.0"
+    "@grpc/proto-loader": "^0.8.0",
+    "@proto/pocker": "^1.0.0"
   }
 }

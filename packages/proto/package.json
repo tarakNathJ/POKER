@@ -1,5 +1,5 @@
 {
-  "name": "proto",
+  "name": "@proto/pocker",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,7 +7,9 @@
     "build": "npx tsc"
   },
   "keywords": [],
+  "files": ["**/*.proto"],
   "author": "",
   "license": "ISC",
   "type": "module"
 }
+
