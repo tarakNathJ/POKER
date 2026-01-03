@@ -9,21 +9,14 @@ The **Generate and Manage Card Service** is a core microservice responsible for 
 ```
 generate_and_manage_card/
 ├── src/
-│   ├── controllers/           # Request handlers for card operations
-│   ├── services/              # Business logic for card management
-│   │   ├── deckService.ts     # Deck generation and shuffling
-│   │   ├── dealerService.ts   # Card dealing logic
-│   │   ├── handEvaluator.ts   # Poker hand evaluation
-│   │   └── gameStateService.ts # Game state management
-│   ├── models/                # Data models for cards and games
-│   ├── middleware/            # Authentication and validation
-│   ├── routes/                # API routes
-│   ├── utils/                 # Helper functions
-│   │   ├── cardGenerator.ts   # Card generation utilities
-│   │   ├── shuffleAlgorithm.ts # Shuffle algorithms
-│   │   └── handRanker.ts      # Hand ranking logic
-│   └── config/                # Configuration files
-├── tests/                     # Test files
+│   ├── controllers/
+|   |       |──  index.controller.ts
+│   ├── utils
+|        |── cards_Shuffle.ts
+|        |──cards_template.ts
+|        |──generate_random_number.ts
+|        |──round_card.ts
+|
 ├── package.json
 └── tsconfig.json
 ```
